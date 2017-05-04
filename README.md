@@ -15,7 +15,7 @@ The central class of the library is `Hamiltonian<Storage, Model>`, that is param
     This storage is implemented with *OpenMP* support.
     - `CRSStorage<Model>`. A simple CRS storage.
 
-The resluting eigenpairs are stored as a set of `EigenPair<precision, SymmetrySectorType>` structures in 
+The resulting eigenpairs are stored as a set of `EigenPair<precision, SymmetrySectorType>` structures in 
 the Hamiltonian object. 
 
 The following observable can be computed by means of Lanczos continuous fraction 
