@@ -10,8 +10,29 @@ chi_ch_loc_pi_pi = complex(0.0, 0.0)
 #
 ######################
 
-V = 0.5 # non-local interaction
-kpt = 50  # mesh 
+# V from inp
+
+f = open('../inp', "r")
+for i in range(6):
+    f.readline()
+V = f.readline().split()[0]
+
+f.close()
+
+print "V = ", V
+# lattice
+
+f = open('../lattice',"r")
+data = f.readlines()
+
+kpt_x = int(data[0].split()[0])
+kpt_y = int(data[0].split()[0])
+
+f.close()
+
+if (kpt_x == kpt_y):
+    kpt = kpt_x
+
 qx = int(kpt / 2)
 qy = int(kpt / 2)
 
@@ -21,7 +42,7 @@ qy = int(kpt / 2)
 #
 ######################
 
-f = open('H_V.dat')
+f = open('../H_V.dat', "r")
 data = f.readlines()
 
 intensity = [ [0.0] * np.int(kpt) for i in range(np.int(kpt))]
@@ -48,7 +69,7 @@ print "H_V( pi; pi) = ", H_V
 #
 ######################
 
-f = open("chi_n.dat", "r")
+f = open("../chi_n.dat", "r")
 lines = f.readlines()
 
 i = 0
@@ -67,7 +88,7 @@ f.close()
 #
 ######################
 
-f = open("Chi_loc.dat", "r")
+f = open("../Chi_loc.dat", "r")
 lines = f.readlines()
 
 i = 0
@@ -85,7 +106,7 @@ f.close()
 #
 ######################
 
-f = open("lambda.dat", "r")
+f = open("../lambda.dat", "r")
 lines = f.readlines()
 
 i = 0
