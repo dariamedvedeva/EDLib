@@ -4,6 +4,17 @@ import numpy as np
 chi_ch_imp_pi_pi = complex(0.0, 0.0)
 chi_ch_loc_pi_pi = complex(0.0, 0.0)
 
+# 1st parameter - chi_pi_pi.py, 2nd parameter - path
+# use full path
+
+if len (sys.argv) >= 1:
+     path = sys.argv[1]
+else:
+    print ("Enter filename")
+    os.abort()
+
+print path + 'inp'
+
 ######################
 #
 #  input file
